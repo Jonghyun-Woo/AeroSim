@@ -1,0 +1,63 @@
+# Aerosonde physical/aero/propulsion parameters.
+# Standard published values from Beard & McLain, "Small Unmanned Aircraft:
+# Theory and Practice" (UAVBook), Appendix E. These are the commonly-reused
+# course-port defaults -- double check against your copy of the book before
+# trusting results for anything beyond qualitative behavior.
+
+mass: 11.0        # kg
+Jx: 0.8244        # kg*m^2
+Jy: 1.135
+Jz: 1.759
+Jxz: 0.1204
+gravity: 9.81     # m/s^2
+
+geometry:
+  S: 0.55         # wing area, m^2
+  b: 2.8956       # wingspan, m
+  c: 0.18994      # mean aerodynamic chord, m
+  AR: 15.24       # aspect ratio, b^2/S
+  e_osw: 0.9      # Oswald efficiency factor
+
+aero_longitudinal:
+  CL0: 0.28
+  CL_alpha: 3.45
+  CD0: 0.03
+  CM0: -0.02338
+  CM_alpha: -0.38
+  CL_q: 0.0
+  CD_q: 0.0
+  CM_q: -3.6
+  CL_delta_e: 0.36
+  CD_delta_e: 0.0
+  CM_delta_e: -0.5
+  alpha0: 0.4712   # stall-model extension point, unused by the v1 linear model
+
+aero_lateral:
+  CY0: 0.0
+  CY_beta: -0.98
+  CY_p: 0.0
+  CY_r: 0.0
+  CY_delta_a: 0.0
+  CY_delta_r: -0.17
+  Cl0: 0.0
+  Cl_beta: -0.12
+  Cl_p: -0.26
+  Cl_r: 0.14
+  Cl_delta_a: 0.08
+  Cl_delta_r: 0.105
+  Cn0: 0.0
+  Cn_beta: 0.25
+  Cn_p: 0.022
+  Cn_r: -0.35
+  Cn_delta_a: 0.06
+  Cn_delta_r: -0.032
+
+propulsion:
+  S_prop: 0.2027
+  C_prop: 1.0
+  k_motor: 80.0
+  k_Tp: 0.0
+  k_Omega: 0.0
+
+atmosphere:
+  rho: 1.2682     # air density, kg/m^3
