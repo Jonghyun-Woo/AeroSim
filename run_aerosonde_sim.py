@@ -7,8 +7,8 @@ import matplotlib.pyplot as plt
 from ctrls.autopilot import Autopilot
 from models.aerosonde import Aerosonde
 from models.base_vehicle import RigidBody6DOF
-from sim.config import load_config
-from sim.logger import Logger
+from utils.config import load_config
+from utils.logger import Logger
 
 
 def commands_at(t):
@@ -19,8 +19,8 @@ def commands_at(t):
 
 
 def main():
-    cfg = load_config("cfg/aerosonde.yaml")
-    ap_cfg = load_config("cfg/autopilot.yaml")
+    cfg = load_config("cfg/aerosonde.yml")
+    ap_cfg = load_config("cfg/autopilot.yml")
 
     dt = ap_cfg["dt"]
     sim_time = 80.0
