@@ -1,0 +1,16 @@
+# UAVBook Ch.6 successive-loop-closure autopilot gains.
+# These are placeholder starting points, NOT derived from the book's
+# transfer-function gain-design equations (a_phi1/a_phi2/etc from trim
+# linearization) -- that closed-form design is future work. Tune by hand
+# against the plots produced by run_aerosonde_sim.py.
+#
+# Angle limits are in radians: 0.5236 = 30 deg, 0.7854 = 45 deg, 0.3491 = 20 deg.
+
+dt: 0.01
+
+roll_from_aileron:      {kp: 1.5,  ki: 0.0,   kd: 0.3,  u_min: -0.5236, u_max: 0.5236}
+course_from_roll:       {kp: 2.0,  ki: 0.1,   kd: 0.0,  u_min: -0.7854, u_max: 0.7854}
+sideslip_from_rudder:   {kp: -0.5, ki: -0.1,  kd: 0.0,  u_min: -0.5236, u_max: 0.5236}
+pitch_from_elevator:    {kp: -2.0, ki: 0.0,   kd: -0.5, u_min: -0.5236, u_max: 0.5236}
+altitude_from_pitch:    {kp: 0.03, ki: 0.005, kd: 0.0,  u_min: -0.3491, u_max: 0.3491}
+airspeed_from_throttle: {kp: 0.5,  ki: 0.1,   kd: 0.0,  u_min: 0.0,     u_max: 1.0}
